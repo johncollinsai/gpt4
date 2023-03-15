@@ -1,12 +1,12 @@
 FROM python:slim
 
-WORKDIR /home/volgpt-post-temp
+WORKDIR /home/gpt4
 
 COPY requirements.txt requirements.txt 
 RUN python -m venv venv
 RUN venv/bin/pip install -r requirements.txt
 
-COPY volgpt-post-temp.ipynb volgpt-image-jenny-saville.png boot.sh ./ 
+COPY gpt4.ipynb gpt4-image.png boot.sh ./ 
 
 RUN chmod a+x boot.sh
 ENV PORT 8080
